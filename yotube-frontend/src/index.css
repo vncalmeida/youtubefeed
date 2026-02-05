@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #FF0000;
+  --primary-dark: #CC0000;
+}
+
+.dark {
+  --primary: #ff4d4f;
+  --primary-dark: #d9363e;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  @apply bg-white text-gray-900;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.card-hover {
+  @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+}
+
+.modal-overlay {
+  @apply fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm z-50;
+}
+
+.modal-content {
+  @apply fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 
+         bg-white rounded-2xl shadow-2xl z-50 w-11/12 max-w-4xl max-h-[90vh] 
+         overflow-y-auto scrollbar-hide;
+}
+
+.performance-indicator {
+  @apply h-2 rounded-full;
+}
+
+.performance-indicator.high {
+  @apply bg-green-500;
+}
+
+.performance-indicator.medium {
+  @apply bg-yellow-500;
+}
+
+.performance-indicator.low {
+  @apply bg-[var(--primary)];
+}
+
+.search-input {
+  @apply w-full px-4 py-2 rounded-lg bg-gray-50 border border-gray-200
+         focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent
+         transition-all duration-300;
+}
+
+.filter-button {
+  @apply px-4 py-2 rounded-lg bg-gray-50 hover:bg-gray-100 
+         transition-all duration-300 text-sm font-medium;
+}
+
+.filter-button.active {
+  @apply bg-[var(--primary)] text-white hover:bg-[var(--primary-dark)];
+}
